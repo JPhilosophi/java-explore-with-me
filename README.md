@@ -1,2 +1,2 @@
 # java-explore-with-me
-Template repository for ExploreWithMe project.
+The application is a poster. Where you can offer any event from an exhibition to a trip to the cinema and recruit a company to participate in it.
