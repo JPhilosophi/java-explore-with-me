@@ -91,7 +91,7 @@ public class RequestServiceImpl implements RequestService {
         EventEntity event = eventRepository
                 .findById(eventId).orElseThrow(() -> new NotFoundException("event not found"));
         if (event.getId().equals(eventId) && event.getInitiatorId().equals(userId) &&
-            event.getRequestModeration() && event.getParticipantLimit() > 0) {
+                event.getRequestModeration() && event.getParticipantLimit() > 0) {
             request.setRequestStatus(RequestStatus.CONFIRMED);
             request = requestRepository.save(request);
             return RequestMapper.toRequestDto(request);

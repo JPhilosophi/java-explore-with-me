@@ -28,7 +28,7 @@ public class PublicEventController {
     public EventOutput getById(@PathVariable Long id, HttpServletRequest request) {
 
         log.info("get event by id={}, requestURI={}, remoteAddr={}", id, request.getRequestURI(), request.getRemoteAddr());
-       // statsService.setHits(request.getRequestURI(), request.getRemoteAddr());
+        // statsService.setHits(request.getRequestURI(), request.getRemoteAddr());
         return eventService.findById(id);
     }
 
@@ -36,11 +36,11 @@ public class PublicEventController {
     public List<EventShortOutput> getEvents(HttpServletRequest request,
                                             @RequestParam(required = false) List<Long> categories,
                                             @RequestParam(required = false) @DateTimeFormat(
-                                                       iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
-                                                        LocalDateTime rangeStart,
+                                                    iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
+                                                    LocalDateTime rangeStart,
                                             @RequestParam(required = false) @DateTimeFormat(
-                                                       iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
-                                                       LocalDateTime rangeEnd,
+                                                    iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
+                                                    LocalDateTime rangeEnd,
                                             @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
                                             @Positive @RequestParam(defaultValue = "10") Integer size,
                                             @RequestParam(required = false) EventSort sort,
@@ -53,6 +53,6 @@ public class PublicEventController {
                 categories, rangeStart, rangeEnd, from, size, sort, onlyAvailable, paid, text);
 
         return eventService.getEventByParameters(null, null, categories, rangeStart, rangeEnd,
-                        from, size, sort, onlyAvailable, paid, text);
+                from, size, sort, onlyAvailable, paid, text);
     }
 }

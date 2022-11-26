@@ -19,10 +19,10 @@ public interface EventService {
     EventOutput updateByCreator(EventUpdate event, Long userId);
 
     List<EventShortOutput> getEventByParameters(List<Long> users, List<EventState> eventStates,
-                                           List<Long> categories,
-                                           LocalDateTime rangeStart, LocalDateTime rangeEnd,
-                                           Integer from, Integer size, EventSort eventSort, Boolean onlyAvailable,
-                                           Boolean paid, String text);
+                                                List<Long> categories,
+                                                LocalDateTime rangeStart, LocalDateTime rangeEnd,
+                                                Integer from, Integer size, EventSort eventSort, Boolean onlyAvailable,
+                                                Boolean paid, String text);
 
     EventOutput findById(Long id);
 

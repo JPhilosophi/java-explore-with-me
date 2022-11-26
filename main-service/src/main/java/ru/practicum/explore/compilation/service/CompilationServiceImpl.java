@@ -25,6 +25,7 @@ import java.util.stream.Collectors;
 public class CompilationServiceImpl implements CompilationService {
     CompilationRepository compilationRepository;
     EventRepository eventRepository;
+
     @Override
     public CompilationOutputDto create(CompilationInputDto compilation) {
         CompilationEntity compilationEntity = CompilationMapper.toCompilationEntity(compilation);

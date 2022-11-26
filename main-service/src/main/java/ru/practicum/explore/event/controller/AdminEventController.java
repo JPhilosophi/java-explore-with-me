@@ -37,7 +37,7 @@ public class AdminEventController {
 
     @PutMapping("/{eventId}")
     public EventOutput update(@PathVariable Long eventId,
-                                 @Valid @RequestBody EventInput eventInput) {
+                              @Valid @RequestBody EventInput eventInput) {
         log.info("event change by admin, eventId={}, eventDtoInput={}", eventId, eventInput);
         return eventService.updateByAdmin(eventInput, eventId);
     }
@@ -47,17 +47,17 @@ public class AdminEventController {
                                               @RequestParam(required = false) List<EventState> states,
                                               @RequestParam(required = false) List<Long> categories,
                                               @RequestParam(required = false) @DateTimeFormat(
-                                                    iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
-                                                     LocalDateTime rangeStart,
+                                                      iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
+                                                      LocalDateTime rangeStart,
                                               @RequestParam(required = false) @DateTimeFormat(
-                                                    iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
-                                                    LocalDateTime rangeEnd,
+                                                      iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
+                                                      LocalDateTime rangeEnd,
                                               @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
                                               @Positive @RequestParam(defaultValue = "10") Integer size) {
 
         log.info("admin get full information about all events, users={}, states={}, categories={}, rangeStart={}," +
                 "rangeEnd={}, from={}, size={}", users, states, categories, rangeStart, rangeEnd, from, size);
         return eventService.getEventByParameters(users, states, categories, rangeStart, rangeEnd, from, size,
-                        null, null, null, null);
+                null, null, null, null);
     }
 }

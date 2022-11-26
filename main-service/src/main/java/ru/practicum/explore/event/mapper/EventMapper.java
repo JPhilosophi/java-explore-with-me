@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventMapper {
-    public static EventEntity toEventEntity(EventInput eventInput, Long userId){
+    public static EventEntity toEventEntity(EventInput eventInput, Long userId) {
         EventEntity eventEntity = new EventEntity();
         eventEntity.setTitle(eventInput.getTitle());
         eventEntity.setCategoryId(eventInput.getCategoryId());
@@ -39,7 +39,7 @@ public class EventMapper {
         return eventEntity;
     }
 
-    public static EventOutput toEventOutput (EventEntity event) {
+    public static EventOutput toEventOutput(EventEntity event) {
         EventOutput eventOutput = new EventOutput();
         eventOutput.setId(event.getId());
         eventOutput.setTitle(event.getTitle());
@@ -50,7 +50,7 @@ public class EventMapper {
         return eventOutput;
     }
 
-    public static EventShortOutput toEventShortOutput (EventEntity event) {
+    public static EventShortOutput toEventShortOutput(EventEntity event) {
         EventShortOutput eventShortOutput = new EventShortOutput();
         eventShortOutput.setId(event.getId());
         eventShortOutput.setEventDate(event.getEventDate());

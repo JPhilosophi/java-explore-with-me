@@ -30,7 +30,7 @@ public class PrivateEventController {
 
     @PatchMapping
     public EventOutput update(@PathVariable Long userId,
-                                 @Valid @RequestBody EventUpdate eventUpdate) {
+                              @Valid @RequestBody EventUpdate eventUpdate) {
 
         log.info("update event userId={}, eventDtoInput={}", userId, eventUpdate);
         return eventService.updateByCreator(eventUpdate, userId);
@@ -47,7 +47,7 @@ public class PrivateEventController {
 
     @GetMapping("/{eventId}")
     public EventOutput getById(@PathVariable Long userId,
-                                  @PathVariable Long eventId) {
+                               @PathVariable Long eventId) {
 
         log.info("get event by id, userId={}, eventId={}", userId, eventId);
         return eventService.getById(userId, eventId);
@@ -55,7 +55,7 @@ public class PrivateEventController {
 
     @PatchMapping("/{eventId}")
     public EventOutput cancellation(@PathVariable Long userId,
-                                       @PathVariable Long eventId) {
+                                    @PathVariable Long eventId) {
         log.info("cancel event by id, userId={}, eventId={}", userId, eventId);
         return eventService.cancellation(userId, eventId);
     }
@@ -70,8 +70,8 @@ public class PrivateEventController {
 
     @PatchMapping("/{eventId}/requests/{reqId}/confirm")
     public RequestDto confirmed(@PathVariable Long userId,
-                                             @PathVariable Long eventId,
-                                             @PathVariable Long reqId) {
+                                @PathVariable Long eventId,
+                                @PathVariable Long reqId) {
 
         log.info("confirm someone else's request, userId={}, eventId={}, reqId={}", userId, eventId, reqId);
         return requestService.confirmed(userId, eventId, reqId);
@@ -79,8 +79,8 @@ public class PrivateEventController {
 
     @PatchMapping("/{eventId}/requests/{reqId}/reject")
     public RequestDto rejected(@PathVariable Long userId,
-                                            @PathVariable Long eventId,
-                                            @PathVariable Long reqId) {
+                               @PathVariable Long eventId,
+                               @PathVariable Long reqId) {
 
         log.info("reject someone else's request, userId={}, eventId={}, reqId={}", userId, eventId, reqId);
         return requestService.rejected(userId, eventId, reqId);

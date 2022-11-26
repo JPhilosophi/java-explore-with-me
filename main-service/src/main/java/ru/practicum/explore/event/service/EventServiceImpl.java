@@ -108,9 +108,9 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<EventShortOutput> getEventByParameters(List<Long> users, List<EventState> states, List<Long> categories,
-                                                  LocalDateTime rangeStart, LocalDateTime rangeEnd,
-                                                  Integer from, Integer size,
-                                                  EventSort sort, Boolean onlyAvailable, Boolean paid, String text) {
+                                                       LocalDateTime rangeStart, LocalDateTime rangeEnd,
+                                                       Integer from, Integer size,
+                                                       EventSort sort, Boolean onlyAvailable, Boolean paid, String text) {
 
         List<Predicate> predicates = new ArrayList<>();
         List<EventEntity> events;
