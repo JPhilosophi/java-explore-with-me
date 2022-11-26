@@ -64,11 +64,6 @@
 							<artifactId>checkstyle</artifactId>
 							<version>10.3</version>
 						</dependency>
-						<dependency>
-							<groupId>org.mapstruct</groupId>
-							<artifactId>mapstruct</artifactId>
-							<version>1.4.2.Final</version>
-						</dependency>
 					</dependencies>
 				</plugin>
 				<plugin>
