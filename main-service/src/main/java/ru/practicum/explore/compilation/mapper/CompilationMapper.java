@@ -27,8 +27,8 @@ public class CompilationMapper {
     public static List<CompilationOutputDto> toCompilationOutputDtoList(List<CompilationEntity> compilationEntitys) {
         List<CompilationOutputDto> result = new ArrayList<>();
 
-        for (CompilationEntity CompilationEntity : compilationEntitys) {
-            result.add(toCompilationOutputDto(CompilationEntity));
+        for (CompilationEntity compilationEntity : compilationEntitys) {
+            result.add(toCompilationOutputDto(compilationEntity));
         }
         return result;
     }
