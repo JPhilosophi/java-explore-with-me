@@ -1,2 +1,6 @@
-package ru.practicum.explore.event.dto;public class EventSort {
+package ru.practicum.explore.event.dto;
+
+public enum EventSort {
+    EVENT_DATE,
+    VIEWS
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 
 @Data
-public class Category {
+public class CategoryDto {
     private Long id;
     @NotBlank(message = "name is blank")
     private String name;

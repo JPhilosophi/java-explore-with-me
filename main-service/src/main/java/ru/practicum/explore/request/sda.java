@@ -1,2 +1,4 @@
-package ru.practicum.explore.request;public class sda {
+package ru.practicum.explore.request;
+
+public class sda {
 }

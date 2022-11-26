@@ -1,4 +1,4 @@
-package ru.practicum.explore.category.controller;
+package ru.practicum.explore.compilation.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/compilations")
 @RequiredArgsConstructor
-public class PublicCompilationController {
+public class PublicController {
     private final CompilationService compilationService;
 
     @GetMapping

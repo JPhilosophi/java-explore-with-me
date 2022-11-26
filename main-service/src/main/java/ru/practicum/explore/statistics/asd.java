@@ -1,2 +1,4 @@
-package ru.practicum.explore.statistics;public class asd {
+package ru.practicum.explore.statistics;
+
+public class asd {
 }

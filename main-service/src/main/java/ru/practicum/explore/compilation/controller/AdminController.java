@@ -1,4 +1,4 @@
-package ru.practicum.explore.category.controller;
+package ru.practicum.explore.compilation.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,13 +13,14 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/admin/compilations")
 @RequiredArgsConstructor
-public class AdminCompilationController {
+public class AdminController {
     private final CompilationService compilationService;
 
+
     @PostMapping
-    public CompilationOutputDto create(@Valid @RequestBody CompilationInputDto compilationInputDto) {
-        log.info("create compilation {}", compilationInputDto);
-        return compilationService.create(compilationInputDto);
+    public CompilationOutputDto create(@Valid @RequestBody CompilationInputDto compilationInput) {
+        log.info("create compilation {}", compilationInput);
+        return compilationService.create(compilationInput);
     }
 
     @DeleteMapping("/{compId}")
