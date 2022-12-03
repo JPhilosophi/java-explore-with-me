@@ -27,15 +27,14 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class EventServiceImpl implements EventService{
+public class EventServiceImpl implements EventService {
+    private static final int MIN_HOURS_FROM_CREATE_TO_EVENT = 2;
+    private static final int MIN_HOURS_FROM_PUBLISHED_TO_EVENT = 1;
     private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final EventMapper eventMapper;
     private final EntityManager entityManager;
     private final StatisticsService statisticsService;
-
-    private static final int MIN_HOURS_FROM_CREATE_TO_EVENT = 2;
-    private static final int MIN_HOURS_FROM_PUBLISHED_TO_EVENT = 1;
 
     @Override
     public EventDtoOutput create(Long userId, EventDtoInput event) {
@@ -138,8 +137,8 @@ public class EventServiceImpl implements EventService{
 
     @Override
     public List<EventDtoOutput> getEventByParameters(List<Long> users, List<State> states, List<Long> categories,
-                                LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from,
-                                Integer size, Sort sort, Boolean onlyAvailable, Boolean paid, String text) {
+                                                     LocalDateTime rangeStart, LocalDateTime rangeEnd, Integer from,
+                                                     Integer size, Sort sort, Boolean onlyAvailable, Boolean paid, String text) {
         List<Predicate> predicates = new ArrayList<>();
         List<EventEntity> events;
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();

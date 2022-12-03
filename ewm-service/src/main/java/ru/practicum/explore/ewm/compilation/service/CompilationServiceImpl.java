@@ -13,13 +13,12 @@ import ru.practicum.explore.ewm.event.entity.EventEntity;
 import ru.practicum.explore.ewm.event.service.EventFactory;
 import ru.practicum.explore.ewm.exeption.NotFoundException;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
-public class CompilationServiceImpl implements CompilationService{
+public class CompilationServiceImpl implements CompilationService {
     private final CompilationRepository compilationRepository;
     private final EventFactory eventFactory;
     private final CompilationMapper compilationMapper;
@@ -78,7 +77,7 @@ public class CompilationServiceImpl implements CompilationService{
     @Override
     public List<CompilationDto> getCompilations(Boolean pinned, Integer from, Integer size) {
         Pageable pageable = PageRequest.of(from, size);
-        List<CompilationEntity> compilationEntities =  compilationRepository.findAllByPinned(pinned, pageable);
+        List<CompilationEntity> compilationEntities = compilationRepository.findAllByPinned(pinned, pageable);
         return compilationMapper.toDto(compilationEntities);
     }
 }

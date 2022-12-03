@@ -25,10 +25,11 @@ public class RequestServiceImpl implements RequestService {
     private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final RequestMapper requestMapper;
+
     @Override
     public RequestDto create(Long userId, Long eventId) {
         EventEntity eventEntity = eventRepository.findById(eventId).orElseThrow();
-        UserEntity userEntity =  userRepository.findById(userId).orElseThrow();
+        UserEntity userEntity = userRepository.findById(userId).orElseThrow();
         RequestEntity requestEntity = requestMapper.toRequest(userId, eventId);
         if (!eventEntity.getState().equals(State.PUBLISHED)) {
             throw new ConflictException("Event must be published", "event state = " + eventEntity.getState());

@@ -6,7 +6,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.explore.ewm.event.dto.EventDtoInput;
 import ru.practicum.explore.ewm.event.dto.EventDtoOutput;
-import ru.practicum.explore.ewm.event.dto.EventDtoOutputShort;
 import ru.practicum.explore.ewm.event.dto.State;
 import ru.practicum.explore.ewm.event.service.EventService;
 
@@ -44,20 +43,20 @@ public class AdminEventController {
 
     @GetMapping
     public List<EventDtoOutput> searchEvent(@RequestParam(required = false) List<Long> users,
-                                                 @RequestParam(required = false) List<State> states,
-                                                 @RequestParam(required = false) List<Long> categories,
-                                                 @RequestParam(required = false) @DateTimeFormat(
+                                            @RequestParam(required = false) List<State> states,
+                                            @RequestParam(required = false) List<Long> categories,
+                                            @RequestParam(required = false) @DateTimeFormat(
                                                     iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
-                                                        LocalDateTime rangeStart,
-                                                 @RequestParam(required = false) @DateTimeFormat(
+                                                    LocalDateTime rangeStart,
+                                            @RequestParam(required = false) @DateTimeFormat(
                                                     iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
                                                     LocalDateTime rangeEnd,
-                                                 @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
-                                                 @Positive @RequestParam(defaultValue = "10") Integer size) {
+                                            @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
+                                            @Positive @RequestParam(defaultValue = "10") Integer size) {
 
         log.info("admin get full information about all events, users={}, states={}, categories={}, rangeStart={}," +
                 "rangeEnd={}, from={}, size={}", users, states, categories, rangeStart, rangeEnd, from, size);
         return eventService.getEventByParameters(users, states, categories, rangeStart, rangeEnd, from, size,
-                        null, null, null, null);
+                null, null, null, null);
     }
 }

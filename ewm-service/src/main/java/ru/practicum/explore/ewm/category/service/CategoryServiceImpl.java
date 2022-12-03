@@ -17,7 +17,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
 
@@ -42,7 +42,7 @@ public class CategoryServiceImpl implements CategoryService{
         categoryRepository.delete(oldCategory);
         try {
             categoryRepository.save(newCategory);
-            return  categoryMapper.toCategoryDto(newCategory);
+            return categoryMapper.toCategoryDto(newCategory);
         } catch (DataIntegrityViolationException ex) {
             throw new ConflictException("Category name already in use", "name = " + category.getName());
         }

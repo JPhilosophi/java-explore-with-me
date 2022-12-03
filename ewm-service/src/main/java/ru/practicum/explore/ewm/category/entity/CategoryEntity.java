@@ -2,7 +2,6 @@ package ru.practicum.explore.ewm.category.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-import org.springframework.data.relational.core.mapping.Table;
 
 import javax.persistence.*;
 import java.util.Objects;

@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class HitServiceImpl implements HitService{
+public class HitServiceImpl implements HitService {
     private final HitRepository hitRepository;
     private final HitMapper hitMapper;
 

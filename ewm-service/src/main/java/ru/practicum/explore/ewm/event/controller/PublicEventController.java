@@ -33,25 +33,25 @@ public class PublicEventController {
 
     @GetMapping
     public List<EventDtoOutput> getEvents(HttpServletRequest request,
-                                               @RequestParam(required = false) List<Long> categories,
-                                               @RequestParam(required = false) @DateTimeFormat(
-                                                       iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
-                                                           LocalDateTime rangeStart,
-                                               @RequestParam(required = false) @DateTimeFormat(
-                                                       iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
-                                                       LocalDateTime rangeEnd,
-                                               @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
-                                               @Positive @RequestParam(defaultValue = "10") Integer size,
-                                               @RequestParam(required = false) Sort sort,
-                                               @RequestParam(defaultValue = "false") Boolean onlyAvailable,
-                                               @RequestParam(required = false) Boolean paid,
-                                               @RequestParam(required = false) String text) {
+                                          @RequestParam(required = false) List<Long> categories,
+                                          @RequestParam(required = false) @DateTimeFormat(
+                                                  iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
+                                                  LocalDateTime rangeStart,
+                                          @RequestParam(required = false) @DateTimeFormat(
+                                                  iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd HH:mm:ss")
+                                                  LocalDateTime rangeEnd,
+                                          @PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
+                                          @Positive @RequestParam(defaultValue = "10") Integer size,
+                                          @RequestParam(required = false) Sort sort,
+                                          @RequestParam(defaultValue = "false") Boolean onlyAvailable,
+                                          @RequestParam(required = false) Boolean paid,
+                                          @RequestParam(required = false) String text) {
 
         log.info("get short public info about all events, categories={}, rangeStart={}," +
                         "rangeEnd={}, from={}, size={}, sort={}, onlyAvailable={}, paid={}, text={}",
                 categories, rangeStart, rangeEnd, from, size, sort, onlyAvailable, paid, text);
 
         return eventService.getEventByParameters(null, null, categories, rangeStart, rangeEnd,
-                        from, size, sort, onlyAvailable, paid, text);
+                from, size, sort, onlyAvailable, paid, text);
     }
 }

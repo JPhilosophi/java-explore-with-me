@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.relational.core.mapping.Table;
 import ru.practicum.explore.ewm.event.entity.EventEntity;
 import ru.practicum.explore.ewm.request.dto.Status;
 import ru.practicum.explore.ewm.user.entity.UserEntity;

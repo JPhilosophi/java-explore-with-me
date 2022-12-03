@@ -17,17 +17,17 @@ public interface EventMapper {
     @Mapping(target = "initiator.id", source = "userId")
     @Mapping(target = "lat", source = "eventDtoInput.location.lat")
     @Mapping(target = "lon", source = "eventDtoInput.location.lon")
-    EventEntity toEventEntity (EventDtoInput eventDtoInput, Long userId);
+    EventEntity toEventEntity(EventDtoInput eventDtoInput, Long userId);
 
     @Mapping(target = "category", source = "eventDtoInput.categoryId")
     @Mapping(target = "lat", source = "eventDtoInput.location.lat")
     @Mapping(target = "lon", source = "eventDtoInput.location.lon")
     @Mapping(target = "paid", source = "isPaid")
-    EventEntity toEventEntity (EventDtoInput eventDtoInput);
+    EventEntity toEventEntity(EventDtoInput eventDtoInput);
 
     @Mapping(target = "category", source = "eventDtoInput.categoryId")
     @Mapping(target = "paid", source = "isPaid")
-    EventEntity toEventEntity (EventDtoInputOnUpdate eventDtoInput);
+    EventEntity toEventEntity(EventDtoInputOnUpdate eventDtoInput);
 
     @Mapping(target = "createdOn", source = "created")
     @Mapping(target = "publishedOn", source = "published")
