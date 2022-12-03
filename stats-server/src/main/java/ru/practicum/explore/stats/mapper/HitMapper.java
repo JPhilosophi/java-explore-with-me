@@ -14,6 +14,6 @@ public interface HitMapper {
 
     HitEntity toHit(HitDto hitDto);
 
-    List<ViewStatsDto> toListHit(List<Hit> entities);
+    List<ViewStatsDto> toStats(List<Hit> hit);
 
 }

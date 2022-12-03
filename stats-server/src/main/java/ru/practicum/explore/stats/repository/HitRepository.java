@@ -15,7 +15,6 @@ public interface HitRepository extends JpaRepository<HitEntity, Long> {
             "group by uri, app")
     List<Hit> getHits(LocalDateTime start, LocalDateTime end, List<String> uris);
 
-
     @Query("select app, uri, count (distinct ip) as hits from hits " +
             "where uri in :uris and (created >= :start and created <= :end)" +
             "group by uri, app")
