@@ -50,6 +50,7 @@ public class PrivateEventController {
                                   @PathVariable Long eventId) {
 
         log.info("get event by id, userId={}, eventId={}", userId, eventId);
+
         return eventService.getByIdAndUserId(userId, eventId);
     }
 

@@ -3,6 +3,7 @@ package ru.practicum.explore.stats.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.practicum.explore.stats.dto.Hit;
 import ru.practicum.explore.stats.dto.HitDto;
 import ru.practicum.explore.stats.dto.ViewStatsDto;
 import ru.practicum.explore.stats.entity.HitEntity;
@@ -23,6 +24,7 @@ public class HitServiceImpl implements HitService {
     @Override
     public void create(HitDto hitDto) {
         HitEntity hitEntity = hitMapper.toHit(hitDto);
+        hitEntity.setIp(hitDto.getIp());
         log.info("link: " + hitEntity);
         hitRepository.save(hitEntity);
     }
@@ -42,7 +44,6 @@ public class HitServiceImpl implements HitService {
         if (!validUris.isEmpty()) {
             return hitMapper.toStats(hitRepository.get(start, end, validUris));
         }
-
         return hitMapper.toStats(hitRepository.getAll(start, end));
     }
 }

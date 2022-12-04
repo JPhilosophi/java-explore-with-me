@@ -197,6 +197,9 @@ public class EventServiceImpl implements EventService {
                     })
                     .collect(Collectors.toList()));
         }
+       for (EventEntity event : events) {
+           setViews(event);
+       }
         return eventMapper.toEventDtoOutput(events);
     }
 
@@ -204,6 +207,9 @@ public class EventServiceImpl implements EventService {
     public List<EventDtoOutput> getAllByUserId(Long userId, Integer from, Integer size) {
         Pageable pageable = PageRequest.of(from, size);
         List<EventEntity> eventEntities = eventRepository.findAllByInitiatorId(userId, pageable);
+        for (EventEntity event : eventEntities) {
+            setViews(event);
+        }
         return eventMapper.toEventDtoOutput(eventEntities);
     }
 
