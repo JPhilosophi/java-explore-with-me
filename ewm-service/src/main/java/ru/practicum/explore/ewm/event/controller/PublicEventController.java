@@ -50,7 +50,7 @@ public class PublicEventController {
         log.info(request.getRequestURI() + " get short public info about all events, categories={}, rangeStart={}," +
                         "rangeEnd={}, from={}, size={}, sort={}, onlyAvailable={}, paid={}, text={}",
                 categories, rangeStart, rangeEnd, from, size, sort, onlyAvailable, paid, text);
-
+        statisticsService.setHits(request.getRequestURI(), request.getRemoteAddr());
         return eventService.getEventByParameters(null, null, categories, rangeStart, rangeEnd,
                 from, size, sort, onlyAvailable, paid, text);
     }
