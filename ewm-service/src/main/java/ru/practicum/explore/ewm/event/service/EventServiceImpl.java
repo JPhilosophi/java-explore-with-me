@@ -197,9 +197,9 @@ public class EventServiceImpl implements EventService {
                     })
                     .collect(Collectors.toList()));
         }
-       for (EventEntity event : events) {
-           setViews(event);
-       }
+        for (EventEntity event : events) {
+            setViews(event);
+        }
         return eventMapper.toEventDtoOutput(events);
     }
 

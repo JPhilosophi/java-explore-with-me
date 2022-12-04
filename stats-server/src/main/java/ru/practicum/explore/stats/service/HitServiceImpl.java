@@ -3,7 +3,6 @@ package ru.practicum.explore.stats.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.practicum.explore.stats.dto.Hit;
 import ru.practicum.explore.stats.dto.HitDto;
 import ru.practicum.explore.stats.dto.ViewStatsDto;
 import ru.practicum.explore.stats.entity.HitEntity;
