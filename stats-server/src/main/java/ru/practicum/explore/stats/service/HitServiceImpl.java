@@ -29,7 +29,7 @@ public class HitServiceImpl implements HitService {
 
     @Override
     public List<ViewStatsDto> get(LocalDateTime start, LocalDateTime end,
-                                 List<String> uris, Boolean unique) {
+                                  List<String> uris, Boolean unique) {
         List<String> validUris = new ArrayList<>();
         for (String str : uris) {
             if (!"/events".equals(str)) {
@@ -43,6 +43,6 @@ public class HitServiceImpl implements HitService {
             return hitMapper.toStats(hitRepository.get(start, end, validUris));
         }
 
-       return hitMapper.toStats(hitRepository.getAll(start, end));
+        return hitMapper.toStats(hitRepository.getAll(start, end));
     }
 }
