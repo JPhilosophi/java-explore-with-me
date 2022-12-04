@@ -22,11 +22,11 @@ public class StatisticsServiceImpl implements StatisticsService {
 
     @Override
     public void setHits(String uri, String ip) {
-        HitDto hitDto1 = new HitDto(null, APP_NAME, uri, ip, LocalDateTime.now());
+        HitDto hitDto = new HitDto(null, APP_NAME, uri, ip, LocalDateTime.now());
         log.info("Отправляем запрос на сервер статистики для {}", uri);
 
-        HitDto hitDto2 = client.setStat(hitDto1);
-        log.info("Получен ответ от сервера статистики {}", hitDto2);
+        HitDto answer = client.setStat(hitDto);
+        log.info("Получен ответ от сервера статистики {}", answer);
     }
 
     @Override

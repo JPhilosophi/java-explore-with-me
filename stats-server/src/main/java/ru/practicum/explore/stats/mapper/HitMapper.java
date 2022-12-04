@@ -16,4 +16,5 @@ public interface HitMapper {
 
     List<ViewStatsDto> toStats(List<Hit> hit);
 
+
 }

@@ -10,14 +10,16 @@ import java.util.List;
 
 public interface HitRepository extends JpaRepository<HitEntity, Long> {
 
-    @Query("select app, uri, count (ip) as hits from hits " +
-            "where uri in :uris and (created >= :start and created <= :end)" +
-            "group by uri, app")
-    List<Hit> getHits(LocalDateTime start, LocalDateTime end, List<String> uris);
+    @Query(nativeQuery = true, value = "select app, uri, count (ip) as hits from hits " +
+            "where uri in :uris and (created >= :start and created <= :end) group by uri, app")
+    List<Hit> get(LocalDateTime start, LocalDateTime end, List<String> uris);
 
-    @Query("select app, uri, count (distinct ip) as hits from hits " +
-            "where uri in :uris and (created >= :start and created <= :end)" +
-            "group by uri, app")
-    List<Hit> getUniqueHits(LocalDateTime start, LocalDateTime end, List<String> uris);
+    @Query(nativeQuery = true, value ="select app, uri, count (distinct ip) as hits from hits " +
+            "where uri in :uris and (created >= :start and created <= :end) group by uri, app")
+    List<Hit> getUnique(LocalDateTime start, LocalDateTime end, List<String> uris);
+
+    @Query(nativeQuery = true, value = "select app, uri, count (ip) as hits from hits " +
+            "where (created >= :start and created <= :end) group by uri, app")
+    List<Hit> getAll(LocalDateTime start, LocalDateTime end);
+
 }
-

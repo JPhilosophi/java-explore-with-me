@@ -20,4 +20,5 @@ public class HitDto {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("timestamp")
     private LocalDateTime created;
+
 }

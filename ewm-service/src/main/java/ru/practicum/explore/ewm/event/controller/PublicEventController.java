@@ -47,7 +47,7 @@ public class PublicEventController {
                                           @RequestParam(required = false) Boolean paid,
                                           @RequestParam(required = false) String text) {
 
-        log.info("get short public info about all events, categories={}, rangeStart={}," +
+        log.info(request.getRequestURI() + " get short public info about all events, categories={}, rangeStart={}," +
                         "rangeEnd={}, from={}, size={}, sort={}, onlyAvailable={}, paid={}, text={}",
                 categories, rangeStart, rangeEnd, from, size, sort, onlyAvailable, paid, text);
 

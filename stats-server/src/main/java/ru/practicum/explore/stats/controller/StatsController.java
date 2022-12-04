@@ -32,12 +32,13 @@ public class StatsController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE,
                     pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime end,
             @RequestParam(required = false) List<String> uris,
-            @RequestParam(defaultValue = "false") Boolean unique,
+            @RequestParam(required = false, defaultValue = "false") Boolean unique,
             HttpServletRequest request) {
         log.info("Запрос к эндпоинту '{}' на получеие статистики статистики {}",
                 request.getRequestURI(), String.join(", ", uris));
 
-        return hitService.getStats(start, end, uris, unique);
+        return hitService.get(start, end, uris, unique);
 
     }
+
 }
