@@ -2,4 +2,4 @@
 Template repository for ExploreWithMe project.
 
 
-https://github.com/JPhilosophi/java-explore-with-me/pull/5
+Link on pull request: https://github.com/JPhilosophi/java-explore-with-me/pull/5
