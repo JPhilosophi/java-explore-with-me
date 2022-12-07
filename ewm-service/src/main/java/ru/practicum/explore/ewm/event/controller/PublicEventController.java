@@ -64,7 +64,7 @@ public class PublicEventController {
     }
 
     @PostMapping("/like")
-    public void like(@Valid @RequestBody RatingInputDto ratingInputDto){
+    public void like(@Valid @RequestBody RatingInputDto ratingInputDto) {
         RatingEntity ratingEntity = ratingMapper.toRatingEntity(ratingInputDto);
         ratingService.like(ratingEntity);
     }

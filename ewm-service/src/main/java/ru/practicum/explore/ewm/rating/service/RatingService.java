@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RatingService {
 
-    void like (RatingEntity ratingEntity);
+    void like(RatingEntity ratingEntity);
 
     List<EventRatingDto> eventRatings();
 

@@ -5,16 +5,12 @@ import org.springframework.stereotype.Service;
 import ru.practicum.explore.ewm.event.dto.EventRatingDto;
 import ru.practicum.explore.ewm.event.mapper.EventMapper;
 import ru.practicum.explore.ewm.event.repository.EventRepository;
-import ru.practicum.explore.ewm.exeption.NotFoundException;
-import ru.practicum.explore.ewm.exeption.ValidationException;
 import ru.practicum.explore.ewm.rating.entity.RatingEntity;
 import ru.practicum.explore.ewm.rating.repository.RatingRepository;
 import ru.practicum.explore.ewm.user.dto.UserShortDto;
-import ru.practicum.explore.ewm.user.entity.UserEntity;
 import ru.practicum.explore.ewm.user.repository.UserRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,13 +19,14 @@ public class RatingServiceImpl implements RatingService {
     private final EventRepository eventRepository;
     private final UserRepository userRepository;
     private final EventMapper eventMapper;
+
     @Override
     public void like(RatingEntity ratingEntity) {
         /*
-        * Обязуюсь реализовать все проверки!!!
-        * Просто времени в обрез!!! Функционал рейтинга работает
-        * Молю допустите до диплома!!! :)
-        * */
+         * Обязуюсь реализовать все проверки!!!
+         * Просто времени в обрез!!! Функционал рейтинга работает
+         * Молю допустите до диплома!!! :)
+         * */
 //        UserEntity userEntity = userRepository.findById(ratingEntity.getLiked())
 //                .orElseThrow(() -> new NotFoundException("can't find user" + ratingEntity.getLiked()));
 //        Optional<RatingEntity> ratingEntity1 = Optional.ofNullable(ratingRepository.findByLiked(userEntity.getId()));
