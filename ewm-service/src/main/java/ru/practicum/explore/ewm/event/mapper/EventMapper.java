@@ -2,7 +2,9 @@ package ru.practicum.explore.ewm.event.mapper;
 
 import org.mapstruct.*;
 import ru.practicum.explore.ewm.category.service.CategoryFactory;
-import ru.practicum.explore.ewm.event.dto.*;
+import ru.practicum.explore.ewm.event.dto.EventDtoInput;
+import ru.practicum.explore.ewm.event.dto.EventDtoInputOnUpdate;
+import ru.practicum.explore.ewm.event.dto.EventDtoOutput;
 import ru.practicum.explore.ewm.event.entity.EventEntity;
 import ru.practicum.explore.ewm.user.service.UserService;
 

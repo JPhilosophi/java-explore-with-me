@@ -1,8 +1,6 @@
 package ru.practicum.explore.ewm.user.mapper;
 
 import org.mapstruct.Mapper;
-import ru.practicum.explore.ewm.event.dto.EventRatingDto;
-import ru.practicum.explore.ewm.event.dto.EventRatings;
 import ru.practicum.explore.ewm.user.dto.UserDto;
 import ru.practicum.explore.ewm.user.dto.UserRating;
 import ru.practicum.explore.ewm.user.dto.UserRatingDto;

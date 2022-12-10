@@ -10,8 +10,6 @@ import ru.practicum.explore.ewm.exeption.NotFoundException;
 import ru.practicum.explore.ewm.rating.entity.RatingEntity;
 import ru.practicum.explore.ewm.rating.repository.RatingRepository;
 import ru.practicum.explore.ewm.user.dto.UserRatingDto;
-import ru.practicum.explore.ewm.user.dto.UserShortDto;
-import ru.practicum.explore.ewm.user.entity.UserEntity;
 import ru.practicum.explore.ewm.user.mapper.UserMapper;
 import ru.practicum.explore.ewm.user.repository.UserRepository;
 
@@ -41,7 +39,7 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public List<EventRatingDto> eventRatings() {
-        List<EventRatingDto> eventRatingDtos =eventRatingMapper.toEventRating(eventRepository.getAll());
+        List<EventRatingDto> eventRatingDtos = eventRatingMapper.toEventRating(eventRepository.getAll());
         for (EventRatingDto eventRatingDto : eventRatingDtos) {
             eventRatingDto.setEventDate(eventRepository.findById(eventRatingDto.getId()).get().getEventDate());
         }

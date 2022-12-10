@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.practicum.explore.ewm.rating.service.RatingService;
 import ru.practicum.explore.ewm.user.dto.UserRatingDto;
-import ru.practicum.explore.ewm.user.dto.UserShortDto;
 
 import java.util.List;
 
