@@ -55,4 +55,6 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new NotFoundException("can't fine user"));
         return userMapper.toUserDto(userEntity);
     }
+
+
 }

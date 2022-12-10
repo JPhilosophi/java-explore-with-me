@@ -1,4 +1,4 @@
-package ru.practicum.explore.ewm.rating.dto;
+package ru.practicum.explore.ewm.user.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RatingInputDto {
-    private Long eventId;
-    private Long liked;
+public class UserRatingDto {
+    private String name;
+    private Long ratings;
 }

@@ -63,7 +63,6 @@ CREATE TABLE IF NOT EXISTS ratings
 (
     id           BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     event_id     BIGINT REFERENCES events (id) NOT NULL,
-    liked        BIGINT REFERENCES users (id) NOT NULL,
-    is_liked     BOOLEAN NOT NULL
+    liked        BIGINT REFERENCES users (id) NOT NULL
 );
 

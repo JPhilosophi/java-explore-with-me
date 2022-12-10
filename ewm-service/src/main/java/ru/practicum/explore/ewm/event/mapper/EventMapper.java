@@ -11,12 +11,6 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = {CategoryFactory.class, UserService.class})
 public interface EventMapper {
     @Mapping(target = "category", source = "eventDtoInput.categoryId")
-    @Mapping(target = "initiator.id", source = "userId")
-    @Mapping(target = "lat", source = "eventDtoInput.location.lat")
-    @Mapping(target = "lon", source = "eventDtoInput.location.lon")
-    EventEntity toEventEntity(EventDtoInput eventDtoInput, Long userId);
-
-    @Mapping(target = "category", source = "eventDtoInput.categoryId")
     @Mapping(target = "lat", source = "eventDtoInput.location.lat")
     @Mapping(target = "lon", source = "eventDtoInput.location.lon")
     @Mapping(target = "paid", source = "isPaid")
@@ -34,10 +28,7 @@ public interface EventMapper {
 
     List<EventDtoOutput> toEventDtoOutput(List<EventEntity> events);
 
-    List<EventDtoOutputShort> toDtoShort(List<EventEntity> events);
-
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateEvent(EventEntity newEvent, @MappingTarget EventEntity oldEvent);
 
-    List<EventRatingDto> toEventRating(List<EventRatings> eventRatings);
 }

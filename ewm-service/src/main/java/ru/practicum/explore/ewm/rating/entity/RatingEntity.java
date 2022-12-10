@@ -19,6 +19,4 @@ public class RatingEntity {
     @Column(name = "event_id")
     private Long eventId;
     private Long liked;
-    @Column(name = "is_liked")
-    private Boolean isLiked;
 }

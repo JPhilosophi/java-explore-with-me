@@ -64,13 +64,16 @@ public class PublicEventController {
     }
 
     @PostMapping("/like")
-    public void like(@Valid @RequestBody RatingInputDto ratingInputDto) {
+    public void like(HttpServletRequest request, @Valid @RequestBody RatingInputDto ratingInputDto) {
+        log.info(request.getRequestURI() + " liked event info.  like={}, isLike={}" + ratingInputDto);
         RatingEntity ratingEntity = ratingMapper.toRatingEntity(ratingInputDto);
         ratingService.like(ratingEntity);
     }
 
     @GetMapping("/like")
-    public List<EventRatingDto> rating() {
+    public List<EventRatingDto> rating(HttpServletRequest request) {
+        log.info(request.getRequestURI());
         return ratingService.eventRatings();
     }
+
 }

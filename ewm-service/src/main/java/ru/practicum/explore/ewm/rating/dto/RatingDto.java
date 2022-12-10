@@ -11,5 +11,4 @@ public class RatingDto {
     private Long id;
     private Long eventId;
     private Long liked;
-    private Boolean isLiked;
 }

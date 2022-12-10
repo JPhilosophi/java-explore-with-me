@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 public class EventRatingDto {
     private Long id;
     private String title;
-    private String annotation;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
     private Boolean paid;

@@ -12,9 +12,10 @@ public interface EventRepository extends JpaRepository<EventEntity, Long> {
 
     List<EventEntity> findAllByInitiatorId(Long initiatorId, Pageable pageable);
 
-    @Query(nativeQuery = true, value = "select *\n" +
-            "from (select e.id, e.title,e.annotation, e.event_date, e.paid, (select count(*) from ratings r where r.event_id = e.id) as ratings\n" +
-            "from events e) as result\n" +
-            "order by result.ratings desc;")
-    List<EventRatings> getRatingEvents();
+    @Query(nativeQuery = true, value = "select e.id, e.title, e.event_date, e.paid, count(r.liked) as ratings\n" +
+            "from events e\n" +
+            "left join ratings r on e.id = r.event_id\n" +
+            "group by e.id\n" +
+            "order by ratings DESC\n")
+    List<EventRatings> getAll();
 }
