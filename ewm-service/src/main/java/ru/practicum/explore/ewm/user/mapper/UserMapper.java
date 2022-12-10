@@ -2,6 +2,8 @@ package ru.practicum.explore.ewm.user.mapper;
 
 import org.mapstruct.Mapper;
 import ru.practicum.explore.ewm.user.dto.UserDto;
+import ru.practicum.explore.ewm.user.dto.UserRating;
+import ru.practicum.explore.ewm.user.dto.UserRatingDto;
 import ru.practicum.explore.ewm.user.entity.UserEntity;
 
 import java.util.List;
@@ -14,4 +16,6 @@ public interface UserMapper {
     UserDto toUserDto(UserEntity userEntity);
 
     List<UserDto> toUserDtoList(List<UserEntity> users);
+
+    List<UserRatingDto> toUserRating(List<UserRating> userRatings);
 }

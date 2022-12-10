@@ -1,4 +1,7 @@
-DROP TABLE IF EXISTS categories, users, events, requests, compilations, compilations_events;
+grant usage on schema public to public;
+grant create on schema public to public;
+
+DROP TABLE IF EXISTS ratings, categories, users, events, requests, compilations, compilations_events;
 
 CREATE TABLE IF NOT EXISTS categories
 (
@@ -55,3 +58,11 @@ CREATE TABLE IF NOT EXISTS compilations_events
     event_id        BIGINT REFERENCES events (id),
     compilations_id BIGINT REFERENCES compilations (id)
 );
+
+CREATE TABLE IF NOT EXISTS ratings
+(
+    id           BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    event_id     BIGINT REFERENCES events (id) NOT NULL,
+    liked        BIGINT REFERENCES users (id) NOT NULL
+);
+
